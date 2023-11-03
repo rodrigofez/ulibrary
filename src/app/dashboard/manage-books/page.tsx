@@ -9,8 +9,8 @@ type Props = {};
 const ManageBooks = (props: Props) => {
   return (
     <div className="p-4">
-      <div className="flex gap-4 mb-8 items-center justify-between">
-        <SearchBar />
+      <div className="flex gap-4 mb-8 items-center justify-end">
+        {/* <SearchBar /> */}
         <Link href="/dashboard/manage-books/add-book">
           <Button>Add book</Button>
         </Link>

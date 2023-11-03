@@ -92,7 +92,7 @@ const AddUserForm = () => {
     if (res?.status === 200) {
       toast({
         title: "Success",
-        description: `You have added a new user`,
+        description: `You have added a new user, and invitation has been sent`,
       });
       push("/dashboard/manage-users");
     }
@@ -132,6 +132,9 @@ const AddUserForm = () => {
                         <Input {...field} />
                       </FormControl>
                       <FormMessage />
+                      <div className="text-xs">
+                        An email will be sent to this address
+                      </div>
                     </FormItem>
                   )}
                 />
