@@ -3,6 +3,8 @@ import { addUserSchema } from "@/schemas/add-user";
 import { NextResponse } from "next/server";
 import { ZodError } from "zod";
 
+import bcrypt from "bcrypt";
+
 export const GET = async (req: Request, res: Response) => {
   try {
     const users = await prisma.user.findMany();
@@ -37,10 +39,13 @@ export const POST = async (req: Request, res: Response) => {
         { status: 400 }
       );
 
+    const hashedPassword = await bcrypt.hash("defaultpassword", 10);
+
     const user = await prisma.user.create({
       data: {
         email,
         name,
+        hashedPassword,
         role,
       },
     });

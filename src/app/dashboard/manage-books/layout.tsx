@@ -14,11 +14,11 @@ const routes = [
   },
 ];
 
-export const DashboardLayout = async ({
+export default async function DashboardLayout({
   children,
 }: {
   children: React.ReactNode;
-}) => {
+}) {
   const session = await getAuthSession();
 
   if (!session || session.user.role !== Role.ADMIN) redirect("/");
@@ -29,6 +29,4 @@ export const DashboardLayout = async ({
       {children}
     </>
   );
-};
-
-export default DashboardLayout;
+}

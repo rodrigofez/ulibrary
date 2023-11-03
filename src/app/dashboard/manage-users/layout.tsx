@@ -10,11 +10,11 @@ const routes = [
   },
 ];
 
-export const DashboardLayout = async ({
-  children, // will be a page or nested layout
+export default async function ManageUsersLayout({
+  children,
 }: {
   children: React.ReactNode;
-}) => {
+}) {
   const session = await getAuthSession();
 
   if (!session || session.user.role !== Role.ADMIN) redirect("/");
@@ -24,6 +24,4 @@ export const DashboardLayout = async ({
       {children}
     </>
   );
-};
-
-export default DashboardLayout;
+}
