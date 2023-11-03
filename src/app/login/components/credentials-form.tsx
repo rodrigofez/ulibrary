@@ -44,7 +44,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
     });
 
     if (res?.error || res?.status !== 200) {
-      toast({
+      return toast({
         variant: "destructive",
         duration: 2000,
         title: "Error",
