@@ -4,6 +4,7 @@ const nextConfig = {
     remotePatterns: [
       { hostname: "ulibrary.s3.amazonaws.com" },
       { hostname: "loremflickr.com" },
+      { hostname: "picsum.photos" },
     ],
   },
 };
