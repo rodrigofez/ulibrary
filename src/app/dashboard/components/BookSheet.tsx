@@ -49,6 +49,7 @@ export function BookSheet({
       });
       onClose(false);
       queryClient.invalidateQueries({ queryKey: ["books"] });
+      queryClient.invalidateQueries({ queryKey: ["top-books"] });
     },
     onError: (error) => {
       onClose(false);

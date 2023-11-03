@@ -53,6 +53,7 @@ const Dashboard = (props: Props) => {
       const res = await axios.get(`/api/books/top`);
       return res.data;
     },
+    refetchOnMount: true,
   });
 
   if (isError) return <div>Error</div>;
