@@ -53,7 +53,10 @@ export function EmailAuthForm({ className, ...props }: EmailAuthFormProps) {
     }
 
     if (res?.status === 200) {
-      push("/dashboard/me");
+      return toast({
+        title: "Sign in link sent",
+        description: "Check your email for the sign in link",
+      });
     }
   };
 
